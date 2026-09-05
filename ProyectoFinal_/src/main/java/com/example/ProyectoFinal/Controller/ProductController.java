@@ -1,6 +1,8 @@
 package com.example.ProyectoFinal.Controller;
 
 
+import com.example.ProyectoFinal.Model.ProductModel;
+import com.example.ProyectoFinal.Service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,11 +17,6 @@ public class ProductController {
     // @Autowired, no se requiere porque se prefiere el uso del @RequiredArgsConstructor
     private final ProductService productService;
 
-    /* Estas lineas se comentan pero se dejan como ejemplo, no se requieren porque se usa la anotación @RequiredArgsConstructor
-    public ProductController(ProductService productService) {
-        this.productService = productService;
-    }
-     */
 
     // private ProductRepository productRepository; // Inyectas tu interfaz. Solo se deja como ejemplo, no se requiere porque se está usando un Service
     // public List<ProductModel> products = new ArrayList<>(); // No se usa, es solo cuando los datos están en una estructura
