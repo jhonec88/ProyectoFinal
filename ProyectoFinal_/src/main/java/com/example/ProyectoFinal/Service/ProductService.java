@@ -1,5 +1,6 @@
 package com.example.ProyectoFinal.Service;
 
+import com.example.ProyectoFinal.Dto.ProductDTO;
 import com.example.ProyectoFinal.Model.ProductModel;
 import com.example.ProyectoFinal.Repository.ProductRepository;
 //import com.example.ProyectoFinal.dto.ProductDTO;
@@ -22,9 +23,9 @@ public class ProductService {private static ProductRepository productRepository;
 
     public static Optional<ProductModel> findById(Long id) {return productRepository.findById(id);}
 
-   /* public ProductDTO findDTOById(Long id) {ProductModel product = productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
-        return  new ProductDTO(product.getId(), product.getName(), product.getDescription(), product.getPrice(), product.getImage());
-    }*/
+    public ProductDTO findDTOById(Long id) {ProductModel product = productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
+        return  new ProductDTO(product.getId(), product.getNombre(), product.getDescripcion(), product.getPrecio(), product.getCanDisp(), product.getCategoria(), product.getFecha());
+    }
 
     public void deleteById(Long id) {productRepository.deleteById(id);}
 }

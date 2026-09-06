@@ -1,6 +1,7 @@
 package com.example.ProyectoFinal.Controller;
 
 
+import com.example.ProyectoFinal.Dto.ProductDTO;
 import com.example.ProyectoFinal.Model.ProductModel;
 import com.example.ProyectoFinal.Service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -41,11 +42,11 @@ public class ProductController {
         return ResponseEntity.ok(product);
     }
 
-    /*@GetMapping("/product_dto")
+    @GetMapping("/product_dto")
     public ResponseEntity<ProductDTO> findId(@RequestParam Long id) {
         ProductDTO productDTO = productService.findDTOById(id); // Cuando los datos están en una DB
         return ResponseEntity.ok(productDTO);
-    }*/
+    }
 
     @GetMapping("/product_model")
     public ResponseEntity<ProductModel> getProduct2id(@RequestParam(required = false) Long id) {
