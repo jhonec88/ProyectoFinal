@@ -3,7 +3,6 @@ package com.example.ProyectoFinal.Service;
 import com.example.ProyectoFinal.Dto.ProductDTO;
 import com.example.ProyectoFinal.Model.ProductModel;
 import com.example.ProyectoFinal.Repository.ProductRepository;
-//import com.example.ProyectoFinal.dto.ProductDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

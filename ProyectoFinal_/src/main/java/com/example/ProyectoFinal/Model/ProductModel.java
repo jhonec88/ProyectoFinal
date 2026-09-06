@@ -29,6 +29,4 @@ public class ProductModel {
     private String categoria;
     private LocalDate fecha;
 
-
-
 }

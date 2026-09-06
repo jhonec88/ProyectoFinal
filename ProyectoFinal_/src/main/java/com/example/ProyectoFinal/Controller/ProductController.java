@@ -15,25 +15,12 @@ import java.util.List;
 // @RequestMapping("/api/V1")
 public class ProductController {
 
-    // @Autowired, no se requiere porque se prefiere el uso del @RequiredArgsConstructor
-    private final ProductService productService;
-
-
-    // private ProductRepository productRepository; // Inyectas tu interfaz. Solo se deja como ejemplo, no se requiere porque se está usando un Service
-    // public List<ProductModel> products = new ArrayList<>(); // No se usa, es solo cuando los datos están en una estructura
-
-    @GetMapping("/saludo")
-    // @RequestMapping(value="/saludo", method=RequestMethod.GET) Es equivalente a @GetMapping("/saludo")
-    public String getProducts(@RequestParam String name) {
-        return "Hello ".concat(name).concat(" Is everything working fine with the application?"); //concat(id.toString(), concat(String.valueOf(id) si el parámetro es un int
-        // return String.format("Hola %s, How are things going?", name); // Otra forma de conformar el mensaje
-    }
+        private final ProductService productService;
 
     @GetMapping("/allproducts")
     public ResponseEntity<List<ProductModel>> getAllProducts() {
-        // List<ProductModel> listaProducts = productRepository.findAll(); // Buscamos todos los registros en la tabla usando el repositorio
-        List<ProductModel> listaProducts = productService.findAll(); // Tenemos esta línea porque se configura el Service
-        return ResponseEntity.ok(listaProducts); // Devolvemos la lista con un estado HTTP 200 OK
+               List<ProductModel> listaProducts = productService.findAll();
+        return ResponseEntity.ok(listaProducts);
     }
 
     @GetMapping("/product/{id}")
@@ -83,10 +70,6 @@ public class ProductController {
         return ResponseEntity.ok("Product deleted successfully");
     }
 
-/*
-    @PostMapping("/users")
-    public ResponseEntity<UsersModel> createUser(@RequestBody UsersModel user) {
-        UsersModel savedUser = CustomUserDetailsService.save(user);
-        return ResponseEntity.ok(savedUser);
-    }*/
+
+
 }

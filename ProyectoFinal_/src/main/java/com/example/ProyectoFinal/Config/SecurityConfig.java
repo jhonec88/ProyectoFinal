@@ -21,32 +21,6 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @EnableMethodSecurity
 public class SecurityConfig {
 
-    /* Este código ya no se requiere porque se implemento la base de datos
-    @Bean
-    public UserDetailsService userDetailsService() {
-
-        UserDetails admin =
-            User.withUsername("admin")
-                .password("{noop}1234")
-                .roles("ADMIN")
-                .build();
-
-        UserDetails user =
-            User.withUsername("user")
-                .password("{noop}1234")
-                .roles("USER")
-                .build();
-
-        UserDetails consultor =
-                User.withUsername("Eslevis")
-                .password("{noop}1234")
-                .roles("USER")
-                .build();
-
-        return new InMemoryUserDetailsManager(admin, user, consultor);
-    }
-    */
-
     private final UserService userService;
     public SecurityConfig(UserService userService) {this.userService = userService;
     }
