@@ -2,7 +2,7 @@ package com.example.ProyectoFinal.Service;
 
 import com.example.ProyectoFinal.Model.ProductModel;
 import com.example.ProyectoFinal.Repository.ProductRepository;
-import com.example.ProyectoFinal.dto.ProductDTO;
+//import com.example.ProyectoFinal.dto.ProductDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,9 +22,9 @@ public class ProductService {private static ProductRepository productRepository;
 
     public static Optional<ProductModel> findById(Long id) {return productRepository.findById(id);}
 
-    public ProductDTO findDTOById(Long id) {ProductModel product = productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
+   /* public ProductDTO findDTOById(Long id) {ProductModel product = productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
         return  new ProductDTO(product.getId(), product.getName(), product.getDescription(), product.getPrice(), product.getImage());
-    }
+    }*/
 
     public void deleteById(Long id) {productRepository.deleteById(id);}
 }

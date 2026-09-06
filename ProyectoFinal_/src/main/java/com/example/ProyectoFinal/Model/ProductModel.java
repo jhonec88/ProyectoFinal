@@ -1,5 +1,6 @@
 package com.example.ProyectoFinal.Model;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,8 +9,8 @@ import lombok.*;
 
 import java.time.LocalDate;
 
-@RequiredArgsConstructor
-@Data
+//@RequiredArgsConstructor
+//@Data
 @Builder
 @Getter
 @Setter
@@ -27,5 +28,7 @@ public class ProductModel {
     private Integer canDisp;
     private String categoria;
     private LocalDate fecha;
+
+
 
 }

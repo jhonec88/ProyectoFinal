@@ -41,11 +41,11 @@ public class ProductController {
         return ResponseEntity.ok(product);
     }
 
-    @GetMapping("/product_dto")
+    /*@GetMapping("/product_dto")
     public ResponseEntity<ProductDTO> findId(@RequestParam Long id) {
         ProductDTO productDTO = productService.findDTOById(id); // Cuando los datos están en una DB
         return ResponseEntity.ok(productDTO);
-    }
+    }*/
 
     @GetMapping("/product_model")
     public ResponseEntity<ProductModel> getProduct2id(@RequestParam(required = false) Long id) {
@@ -65,11 +65,12 @@ public class ProductController {
         // Long nextId = productService.findAll().stream().mapToLong(ProductModel::getId).max().orElse(0L) + 1; Es requerido si no se usa @Id y @GeneratedValue(strategy = GenerationType.IDENTITY) en ProductModel
         ProductModel newProduct = productService.saveProduct(ProductModel.builder()
                 // .id(nextId)
-                .name(product.getName())
-                .description(product.getDescription())
-                .price(product.getPrice())
-                .image(product.getImage())
-                .image(product.getPassword())
+                .nombre(product.getNombre())
+                .descripcion(product.getDescripcion())
+                .precio(product.getPrecio())
+                .canDisp(product.getCanDisp())
+                .categoria(product.getCategoria())
+                .fecha(product.getFecha())
                 .build()
         );
         return ResponseEntity.ok(newProduct);
